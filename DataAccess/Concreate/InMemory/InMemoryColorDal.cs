@@ -34,7 +34,7 @@ namespace DataAccess.Concreate.InMemory
             Color colorToDelete = _colors.SingleOrDefault(p => p.ColorId == color.ColorId);
             _colors.Remove(colorToDelete);
         }
-        public List<Color> GetAllByColors(int colorId)
+        public List<Color> GetById(int colorId)
         {
             return _colors.Where(p => p.ColorId == colorId).ToList();
         }
