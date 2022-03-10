@@ -34,5 +34,10 @@ namespace Business.Concreate
         {
             _brandDal.Delete(brand);
         }
+
+        public List<Brand> GetBrandById(int id)
+        {
+            return _brandDal.GetAll(p=>p.BrandId == id);
+        }
     }
 }

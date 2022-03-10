@@ -1,5 +1,7 @@
 ﻿using Business.Concreate;
-using DataAccess.Concreate.InMemory;
+using DataAccess.Concreate.EntityFramwork;
+using Entities.Concreate;
+
 using System;
 
 namespace ConsoleApp1
@@ -8,9 +10,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            CarManager  carManager = new CarManager(new InMemoryCarDal());
-            BrandManager brandManager = new BrandManager(new InMemoryBrandDal());
-            ColorManager colorManager = new ColorManager(new InMemoryColorDal());
+            CarManager  carManager = new CarManager(new EfCarDal());
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+
             foreach (var car in carManager.GetAll())
             {
                 Console.WriteLine("car Id: "+car.Id);
@@ -22,54 +25,18 @@ namespace ConsoleApp1
                 Console.WriteLine("************");
             }
             Console.WriteLine("------------------------------------------------------");
-            carManager.Add(new Entities.Concreate.Car { Id = 10, ColorId = 2, BrandId = 1, ModelYear = 2024, DailyPrice = 25000, Description = "Kusursuz" });
-
-            foreach (var car in carManager.GetAll())
+            //carManager.Add(new Car {ColorId=3, BrandId=2,ModelYear=2012, DailyPrice=6556, Description="1231s"});
+            foreach (var brand in brandManager.GetAll()) 
             {
-                Console.WriteLine("car Id: " + car.Id);
-                Console.WriteLine("car colorıd: " + car.ColorId);
-                Console.WriteLine("car brandıd: " + car.BrandId);
-                Console.WriteLine("car modelyıl: " + car.ModelYear);
-                Console.WriteLine("car price: " + car.DailyPrice);
-                Console.WriteLine("car description: " + car.Description);
+                Console.WriteLine("BrandId: {0} ,:BrandName: {1} ", brand.BrandId, brand.BrandName);
                 Console.WriteLine("************");
             }
             Console.WriteLine("------------------------------------------------------");
-            carManager.Update(new Entities.Concreate.Car { Id = 10, ColorId = 1, BrandId = 6, ModelYear = 2022, DailyPrice = 21000, Description = "Kusursuz değil 21" });
-            foreach (var car in carManager.GetAll())
+            foreach (var color in colorManager.GetAll())
             {
-                Console.WriteLine("car Id: " + car.Id);
-                Console.WriteLine("car colorıd: " + car.ColorId);
-                Console.WriteLine("car brandıd: " + car.BrandId);
-                Console.WriteLine("car modelyıl: " + car.ModelYear);
-                Console.WriteLine("car price: " + car.DailyPrice);
-                Console.WriteLine("car description: " + car.Description);
+                Console.WriteLine("ColorId: {0} , ColorName: {1} ", color.ColorId, color.ColorName);
                 Console.WriteLine("************");
             }
-            Console.WriteLine("------------------------------------------------------");
-            carManager.Delete(new Entities.Concreate.Car { Id = 1});
-            foreach (var car in carManager.GetAll())
-            {
-                Console.WriteLine("car Id: " + car.Id);
-                Console.WriteLine("car colorıd: " + car.ColorId);
-                Console.WriteLine("car brandıd: " + car.BrandId);
-                Console.WriteLine("car modelyıl: " + car.ModelYear);
-                Console.WriteLine("car price: " + car.DailyPrice);
-                Console.WriteLine("car description: " + car.Description);
-                Console.WriteLine("************");
-            }
-
-            //foreach (var brand in brandManager.GetAll())
-            //{
-            //    Console.WriteLine(brand.BrandName);
-
-            //}
-            //Console.WriteLine("------------------------------------------------------");
-            //foreach (var color in colorManager.GetAll())
-            //{
-            //    Console.WriteLine(color.ColorName);
-
-            //}
 
         }
     }
