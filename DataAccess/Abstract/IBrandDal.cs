@@ -1,11 +1,12 @@
-﻿using Entities.Concreate;
+﻿using Core.DataAcces;
+using Entities.Concreate;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IBrandDal : IEntityRepostory<Brand>
+    public interface IBrandDal : IEntityRepository<Brand>
     {
         
     }
