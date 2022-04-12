@@ -1,0 +1,22 @@
+CREATE TABLE [dbo].[Car] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [BrandId]     INT            NOT NULL,
+    [ColorId]     INT            NOT NULL,
+    [ModelYear]   INT            NOT NULL,
+    [DailyPrice]  INT            NOT NULL,
+    [Description] NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Color] (
+    [ColorId]   INT            IDENTITY (1, 1) NOT NULL,
+    [ColorName] NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ColorId] ASC)
+);
+
+CREATE TABLE [dbo].[Color] (
+    [ColorId]   INT            IDENTITY (1, 1) NOT NULL,
+    [ColorName] NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ColorId] ASC)
+);
+
