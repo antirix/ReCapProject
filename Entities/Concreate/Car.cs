@@ -2,6 +2,7 @@
 
 namespace Entities.Concreate
 {
+
     public class Car : IEntity
     {
         public int Id { get; set; }

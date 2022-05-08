@@ -9,13 +9,23 @@ namespace ConsoleApp1
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {/*
+            UserManager userManager = new UserManager(new EfUserDal());
+            
+            userManager.Add(new User {Id=3, FirstName="Kerem11",LastName="Yıldız121", Email="ker1231em@kerem.com",Password="kere1123m123"});
+            
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            customerManager.Add(new Customer { CompanyName = "kerem co.",UserId=1 });
+            */
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            rentalManager.Add(new Rental { Id = 7, CarId=1, CustomerId=2,RentDate=DateTime.Parse("12/02/2022"), ReturnDate = DateTime.Parse("13/02/2022")});
+
 
             //CarList();
             //BrandList();
             //ColorList();
         }
-
+        /*
         private static void CarList()
         {
             CarManager carManager = new CarManager(new EfCarDal());
@@ -47,6 +57,6 @@ namespace ConsoleApp1
                 Console.WriteLine("BrandId: {0} ,:BrandName: {1} ", brand.BrandId, brand.BrandName);
                 Console.WriteLine("************");
             }
-        }
+        }*/
     }
 }
