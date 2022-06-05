@@ -16,9 +16,9 @@ namespace ConsoleApp1
             
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
             customerManager.Add(new Customer { CompanyName = "kerem co.",UserId=1 });
-            */
+            *//*
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            rentalManager.Add(new Rental { Id = 7, CarId=1, CustomerId=2,RentDate=DateTime.Parse("12/02/2022"), ReturnDate = DateTime.Parse("13/02/2022")});
+            rentalManager.Add(new Rental { Id = 7, CarId=1, CustomerId=2,RentDate=DateTime.Parse("12/02/2022"), ReturnDate = DateTime.Parse("13/02/2022")});*/
 
 
             //CarList();

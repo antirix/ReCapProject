@@ -13,5 +13,7 @@ namespace Business.Constants
         public static string MaintenanceTime = "Sistem bakımda.";
         public static string ProductListed = "Ürünler listelendi.";
         public static string Error = "Hata";
+        public static string MainSuccess = "Eklendi";
+        public static string MaxCarImage = "En fazla 5 resim ekleyebilirsiniz.";
     }
 }
