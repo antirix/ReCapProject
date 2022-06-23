@@ -16,29 +16,29 @@ namespace Business.Concreate
         {
             _userDal = userDal;
         }
-        public IResult Add(User user)
+        public IResult Add(User1 user)
         {
            _userDal.Add(user);
             return new SuccessResult(Messages.ProductAdded);
         }
 
-        public IResult Delete(User user)
+        public IResult Delete(User1 user)
         {
             _userDal.Delete(user);
             return new SuccessResult(Messages.ProductAdded);
         }
 
-        public IDataResult<List<User>> GetAll()
+        public IDataResult<List<User1>> GetAll()
         {
-           return new SuccessDataResult<List<User>>(_userDal.GetAll());
+           return new SuccessDataResult<List<User1>>(_userDal.GetAll());
         }
 
-        public IDataResult<List<User>> GetUserById(int id)
+        public IDataResult<List<User1>> GetUserById(int id)
         {
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(p => p.Id==id));
+            return new SuccessDataResult<List<User1>>(_userDal.GetAll(p => p.Id==id));
         }
 
-        public IResult Update(User user)
+        public IResult Update(User1 user)
         {
             _userDal.Update(user);
             return new SuccessResult(Messages.ProductUpdated);

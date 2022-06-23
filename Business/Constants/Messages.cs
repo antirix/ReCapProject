@@ -15,5 +15,12 @@ namespace Business.Constants
         public static string Error = "Hata";
         public static string MainSuccess = "Eklendi";
         public static string MaxCarImage = "En fazla 5 resim ekleyebilirsiniz.";
+        public static string AuthorizationDenied = "Authorization Reddedildi. ";
+        public static string UserRegistered = "Kullanıcı Kaydoldu ";
+        public static string UserNotFound = "Kullanıcı Bulunamadı ";
+        public static string PasswordError = "Şifre yanlış";
+        public static string SuccessfulLogin = "Giriş başarılı";
+        public static string UserAlreadyExists = "Kullanıcı zaten kayıtlı";
+        public static string AccessTokenCreated = "Token Oluşturuldu";
     }
 }

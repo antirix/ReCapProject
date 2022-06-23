@@ -2,13 +2,12 @@
 using DataAccess.Abstract;
 using Entities.Concreate;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
 namespace DataAccess.Concreate.EntityFramwork
 {
-    public class EfUserDal : EfEntityRepositoryBase<User, ReCapProjectContext>, IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User1, ReCapProjectContext>, IUserDal
     {
     }
 }

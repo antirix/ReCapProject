@@ -25,7 +25,7 @@ namespace WebAPI2.Controllers
             return BadRequest(result.Message);
         }
         [HttpPost("add")]
-        public IActionResult Add(User user)
+        public IActionResult Add(User1 user)
         {
             var result = _userService.Add(user);
             if (result.Success)
@@ -35,7 +35,7 @@ namespace WebAPI2.Controllers
             return BadRequest(result.Message);
         }
         [HttpPost("delete")]
-        public IActionResult Delete(User user)
+        public IActionResult Delete(User1 user)
         {
             var result = _userService.Delete(user);
             if (result.Success)
@@ -45,7 +45,7 @@ namespace WebAPI2.Controllers
             return BadRequest(result.Message);
         }
         [HttpPost("update")]
-        public IActionResult Update(User user)
+        public IActionResult Update(User1 user)
         {
             var result = _userService.Update(user);
             if (result.Success)
